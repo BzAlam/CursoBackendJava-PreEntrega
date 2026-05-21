@@ -76,7 +76,7 @@ public abstract class Articulo implements Identificable, Calculable {
 
     @Override
     public String toString() {
-        return "{codigo: " + this.codigo + "} {nombre: " + this.nombre + "} {precio: " + this.precio + "} {descripcion: " + this.descripcion + "}";
+        return "{codigo: " + this.codigo + "} {nombre: " + this.nombre + "} {precio: " + this.precio + "} {descripcion: " + this.descripcion + "} {Detalle específico: " + this.getDetalleEspecifico() + "}";
     }
 
     @Override
@@ -86,7 +86,7 @@ public abstract class Articulo implements Identificable, Calculable {
 
     public abstract double calcularPrecioFinal();
 
-    public abstract double calcularPrecioFinalSinDescuento();
+    //public abstract double calcularPrecioFinalSinDescuento();
 
     public abstract String getTipoArticulo();
 

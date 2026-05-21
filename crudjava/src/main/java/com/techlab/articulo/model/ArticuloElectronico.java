@@ -19,31 +19,30 @@ public class ArticuloElectronico extends Articulo {
 
     @Override
     public double calcularPrecioFinal(){
-
+        return this.Precio() * this.SobrecargoPorGarantia();
     }
 
     @Override
-    public Categoria getTipoArticulo() {
-
-    } 
-
-    @Override
-    public int getCodigo() {
-
+    public String getTipoArticulo() {
+        return "Articulo Electronico";
     }
 
     @Override
     public String getDetalleEspecifico() {
-
-    }
-
-    @Override
-    public double calcularPrecioFinalSinDescuento() {
-
+        return "Articulo con " + this.garantiaMeses + " meses de garantía";
     }
 
     @Override
     public String toString() {
+        return super.toString() + " {Meses de garantía restantes: " + this.garantiaMeses + "}";
+    }
 
+    public double SobrecargoPorGarantia() {
+        if (this.garantiaMeses > 12) { 
+            return 1.10; 
+        }
+        else {
+            return 1;
+        } 
     }
 }

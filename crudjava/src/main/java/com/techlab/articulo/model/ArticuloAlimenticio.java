@@ -1,7 +1,5 @@
 package com.techlab.articulo.model;
 
-import com.techlab.articulo.interfaces.Identificable;
-
 public class ArticuloAlimenticio extends Articulo {
     private int diasParaVencimiento;
 
@@ -21,26 +19,30 @@ public class ArticuloAlimenticio extends Articulo {
 
     @Override
     public double calcularPrecioFinal(){
-
+        return this.Precio() * this.DescuentoPorVencimiento();
     }
 
     @Override
-    public Categoria getTipoArticulo() {
-
+    public String getTipoArticulo() {
+        return "Articulo Alimenticio";
     }
 
     @Override
     public String getDetalleEspecifico() {
-
-    }
-
-    @Override
-    public double calcularPrecioFinalSinDescuento() {
-
+        return "Articulo que vence en " + this.diasParaVencimiento + " días";
     }
 
     @Override
     public String toString() {
+        return super.toString() + " {Dias faltantes para vencimiento: " + this.diasParaVencimiento + "}";
+    }
 
+    public double DescuentoPorVencimiento() {
+        if (this.diasParaVencimiento <= 7) { 
+            return 0.90; 
+        }
+        else {
+            return 1;
+        } 
     }
 }

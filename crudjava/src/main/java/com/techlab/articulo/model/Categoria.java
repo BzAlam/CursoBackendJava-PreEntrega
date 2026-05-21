@@ -14,11 +14,6 @@ public class Categoria implements Identificable {
         this.codigo = Secuencias.generarCodigoCategoria();
     }
 
-    @Override
-    public int getCodigo() {
-        return this.codigo;
-    }
-
     public void Nombre(String setNombre){
         if(Validaciones.EstaVacioElString_(setNombre)) return;
         this.nombre = setNombre;
@@ -41,5 +36,9 @@ public class Categoria implements Identificable {
     public String toString() {
         return "{codigo: " + this.codigo + "} {nombre: " + this.nombre + "} {descripcion: " + this.descripcion + "}";
     }
-    
+
+    @Override
+    public int getCodigo() {
+        return this.codigo;
+    }
 }
