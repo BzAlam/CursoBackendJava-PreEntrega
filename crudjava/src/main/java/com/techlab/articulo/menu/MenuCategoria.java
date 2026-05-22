@@ -18,18 +18,13 @@ public class MenuCategoria extends Menu {
 
     @Override
     protected void MostrarMenu() {
+        System.out.println("Bienvenido al sistema de gestión de categorías. ¿Qué desea hacer?");
         System.out.println("1) Ingresar categoría");
         System.out.println("2) Listar categorías");
         System.out.println("3) Consultar una categoría por código");
         System.out.println("4) Modificar una categoría");
         System.out.println("5) Eliminar una categoría");
         System.out.println("0) Volver");
-    }
-
-    @Override
-    public void CambiarNumeroDeOpcion() {
-        System.out.println("Por favor, seleccione una de estas opciones y luego presione enter: ");
-        super.CambiarNumeroDeOpcion();
     }
 
     @Override

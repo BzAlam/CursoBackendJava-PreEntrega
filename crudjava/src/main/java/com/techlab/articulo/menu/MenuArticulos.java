@@ -15,18 +15,13 @@ public class MenuArticulos extends Menu {
 
     @Override
     protected void MostrarMenu() {
+        System.out.println("Bienvenido al sistema de gestión de articulos. ¿Qué desea hacer?");
         System.out.println("1) Ingresar artículo");
         System.out.println("2) Listar artículos");
         System.out.println("3) Consultar un artículo por código");
         System.out.println("4) Modificar un artículo");
         System.out.println("5) Eliminar un artículo");
         System.out.println("0) Volver");
-    }
-
-    @Override
-    public void CambiarNumeroDeOpcion() {
-        System.out.println("Por favor, seleccione una de estas opciones y luego presione enter: ");
-        super.CambiarNumeroDeOpcion();
     }
 
     @Override

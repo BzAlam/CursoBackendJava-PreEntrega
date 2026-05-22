@@ -13,7 +13,7 @@ public class Repositorio<Tipo extends Identificable> {
 
     public ArrayList<Tipo> Lista() {
         return new ArrayList<>(this.lista);
-    }
+    } 
 
     public void AgregarElemento(Tipo elementoParaAgregar) {
         this.lista.add(elementoParaAgregar);
@@ -45,6 +45,10 @@ public class Repositorio<Tipo extends Identificable> {
 
     public void EliminarElementoConCodigo_(int codigo) {
         Tipo elemento = BuscarElementoPorCodigo_(codigo);
+        this.lista.remove(elemento);
+    }
+
+    public void EliminarElemento_(Tipo elemento) {
         this.lista.remove(elemento);
     }
 

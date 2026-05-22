@@ -42,6 +42,7 @@ public abstract class Menu {
     }
 
     public void CambiarNumeroDeOpcion() {
+        System.out.println("Por favor, seleccione una de estas opciones y luego presione enter: ");
         this.Opcion(Validaciones.ingresarNumero(this.Scanner()));
     }
 
