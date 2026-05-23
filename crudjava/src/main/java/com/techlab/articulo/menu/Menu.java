@@ -49,4 +49,9 @@ public abstract class Menu {
     public boolean TerminoElPrograma() {
         return this.Opcion() == 0;
     }
+
+    protected int SolicitarCodigoConMensaje(String mensaje) {
+        System.out.println(mensaje);
+        return Validaciones.ingresarNumero(this.Scanner());
+    }
 }

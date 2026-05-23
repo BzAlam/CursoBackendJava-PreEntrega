@@ -32,7 +32,7 @@ public class MenuCategoria extends Menu {
     protected void EjecutarComandoPorNumeroDeOpcion(int NumeroDeOpcion) {
         switch (NumeroDeOpcion) {
             case 1: {
-                this.IngresarCategoria(); //TODO
+                this.IngresarCategoria();
                 break;
             }
             case 2: {
@@ -102,13 +102,8 @@ public class MenuCategoria extends Menu {
     }
 
     private void ConsultarCategoriaPorCodigo() {
-        int codigo = SolicitarCodigoConMensaje("Por favor, ingrese el código de la categoría a consultar: ");
+        int codigo = this.SolicitarCodigoConMensaje("Por favor, ingrese el código de la categoría a consultar: ");
         this.ImprimirCategoriaPorCodigo(codigo);
-    }
-
-    private int SolicitarCodigoConMensaje(String mensaje) {
-        System.out.println(mensaje);
-        return Validaciones.ingresarNumero(this.Scanner());
     }
 
     private void ImprimirCategoriaPorCodigo(int codigo) {
@@ -124,7 +119,7 @@ public class MenuCategoria extends Menu {
     }
 
     private void ModificarUnaCategoria() {
-        int codigo = SolicitarCodigoConMensaje("Por favor, ingrese el código de la categoría a modificar: ");
+        int codigo = this.SolicitarCodigoConMensaje("Por favor, ingrese el código de la categoría a modificar: ");
         if(! this.repositorioCategoria.ExisteElElementoConCodigo_(codigo)) {
             System.out.println("No existe una categoría con el código " + codigo + " en el listado!");
             return;
@@ -139,7 +134,7 @@ public class MenuCategoria extends Menu {
             System.out.println("1) Nombre");
             System.out.println("2) Descripcion");
             System.out.println("0) Salir");
-            opcionParaCambiar = SolicitarCodigoConMensaje("Por favor, ingrese un número y presione enter: ");
+            opcionParaCambiar = this.SolicitarCodigoConMensaje("Por favor, ingrese un número y presione enter: ");
             switch (opcionParaCambiar) {
                 case 1: {
                     String nuevoNombre = this.CrearNombreParaCategoria();
@@ -162,7 +157,7 @@ public class MenuCategoria extends Menu {
     }
 
     private void EliminarUnacategoria() {
-        int codigo = SolicitarCodigoConMensaje("Por favor, ingrese el código de la categoría a eliminar: ");
+        int codigo = this.SolicitarCodigoConMensaje("Por favor, ingrese el código de la categoría a eliminar: ");
         if(! this.repositorioCategoria.ExisteElElementoConCodigo_(codigo)) {
             System.out.println("La categoría con el codigo " + codigo + " no se encuentra en la lista!");
         }

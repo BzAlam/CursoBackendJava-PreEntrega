@@ -27,14 +27,36 @@ public final class Validaciones {
         return ingresarNombreNoVacio(scanner);
     }
 
-    public static int ingresarNumero(Scanner scanner) {
+    // public static int ingresarNumero(Scanner scanner) {
+    //     Consumer <String> salida = mensaje -> {
+    //         System.out.println(mensaje);
+    //         scanner.nextLine();
+    //     };
+    //     while (true) {
+    //         try {
+    //             int numero = scanner.nextInt();
+    //             scanner.nextLine();
+    //             return numero;
+    //         } catch (InputMismatchException errorDeInput) {
+    //             salida.accept("Ese no es un número válido, por favor, seleccione un numero válido:");
+    //         } catch (NoSuchElementException errorDeAgotamiento) {
+    //             salida.accept("Agotado el tiempo límite, por favor, intente nuevamente");
+    //         } catch (IllegalStateException errorScannerCerrado) {
+    //             salida.accept("El input ya no se encuentra disponible, por favor, reinicie el programa.");
+    //         } catch (Exception excepcionNoManejada) {
+    //             salida.accept("Ocurrió un error, por favor, intente nuevamente: ");
+    //         }
+    //     }
+    // }
+
+    public static double ingresarNumeroDouble(Scanner scanner) {
         Consumer <String> salida = mensaje -> {
             System.out.println(mensaje);
             scanner.nextLine();
         };
         while (true) {
             try {
-                int numero = scanner.nextInt();
+                double numero = scanner.nextDouble();
                 scanner.nextLine();
                 return numero;
             } catch (InputMismatchException errorDeInput) {
@@ -47,5 +69,9 @@ public final class Validaciones {
                 salida.accept("Ocurrió un error, por favor, intente nuevamente: ");
             }
         }
+    }
+
+    public static int ingresarNumero(Scanner scanner) {
+        return (int) ingresarNumeroDouble(scanner);
     }
 }
