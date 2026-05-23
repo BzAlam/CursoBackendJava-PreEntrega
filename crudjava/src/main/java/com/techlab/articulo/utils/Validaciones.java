@@ -11,8 +11,24 @@ public final class Validaciones {
         return unNombre == null || unNombre.trim().isEmpty();
     }
 
+    public static String ingresarNombreNoVacio(Scanner scanner) {
+        while (true) {
+            String texto = scanner.nextLine();
+            //scanner.nextLine();
+            if (! EstaVacioElString_(texto)) {
+                return texto;
+            }
+            System.out.println("El texto ingresado no puede estar vacío, por favor, intente nuevamente: ");
+        }
+    }
+
+    public static String ingresarNombreNoVacio(Scanner scanner, String mensajeParaMostrar) {
+        System.out.println(mensajeParaMostrar);
+        return ingresarNombreNoVacio(scanner);
+    }
+
     public static int ingresarNumero(Scanner scanner) {
-        Consumer<String> salida = mensaje -> {
+        Consumer <String> salida = mensaje -> {
             System.out.println(mensaje);
             scanner.nextLine();
         };

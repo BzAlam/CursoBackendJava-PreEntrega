@@ -4,7 +4,6 @@ import com.techlab.articulo.repository.Repositorio;
 import com.techlab.articulo.menu.*;
 import com.techlab.articulo.model.Articulo;
 import com.techlab.articulo.model.Categoria;
-import com.techlab.articulo.utils.Validaciones;
 
 public class App extends Menu{
     //Decidí hacer la app principal una clase que herede de menu porque
